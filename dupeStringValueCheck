@@ -1,0 +1,36 @@
+/* Instructions:
+Check to see if a string has the same amount of 'x's and 'o's. 
+The method must return a boolean and be case insensitive. 
+The string can contains any char.
+*/
+
+
+function XO(str) {
+  var countO =0; // why do I have to set these equal to 0 and not just countO; ?
+  var countX =0; 
+  
+  for(var i = 0; i<str.length;i++){
+    if(str.charAt(i) === 'o' || str.charAt(i)=== 'O'){
+      countO++;
+    }  
+    if(str.charAt(i) === 'x' || str.charAt(i) === 'X'){
+      countX++;
+    }
+  }  
+  if(countO === countX){
+  return true;
+  }
+  else{
+    return false;
+  }
+}
+
+
+// Voted Best Practice Below:
+/*
+function XO(str) {
+  let x = str.match(/x/gi); //regular expression.
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
+}
+*/
