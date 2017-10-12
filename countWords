@@ -1,0 +1,24 @@
+/*
+Write a function called “countWords”.
+Given a string, “countWords” returns an object where 
+each key is a word in the given string, with its value 
+being how many times that word appeared in the given string.
+
+*/
+
+function countWords(str) {
+  let strArray = str.split(' ');
+  let strObject = {};
+  
+  if (str.length === 0){
+    return strObject;
+  }
+  for (i = 0; i < strArray.length; i++){
+    strObject[strArray[i]] = (strObject[strArray[i]] || 0) + 1;
+  }
+  return strObject;
+}
+
+
+//OR
+
