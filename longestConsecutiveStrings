@@ -11,44 +11,6 @@ n being the length of the string array, if n = 0 or k > n or k <= 0 return "".
 //Was not able to complete at the time - found solution online:
 
 
-const longestConsec = (strArr, numStr) => {
-  const arrLen = strArr.length
-  if (arrLen === 0 || numStr > arrLen || numStr <= 0) {
-    return ""
-  }
-  const consecStrings = getAllConsecutiveStrings(strArr, numStr, arrLen)
-  return getFirstLongestString(consecStrings)
-}
-
-const getAllConsecutiveStrings = (strArr, numStr, arrLen) => {
-  const numConsecStr = arrLen - numStr
-  const result = []
-  let consecStr
-  for (let i = 0; i <= numConsecStr; i++) {
-    consecStr = ""
-    for (let s = i; s < i + numStr; s++) {
-      consecStr += strArr[s]
-    }
-    result.push(consecStr)
-  }
-  return result
-}
-
-const getFirstLongestString = strArr => {
-  let firstlongestString = ""
-  let longestLength = 0
-  for (let str of strArr) {
-    strLen = str.length
-    if (strLen > longestLength) {
-      firstlongestString = str
-      longestLength = strLen
-    }
-  }
-  return firstlongestString
-}
-
-//best practice solution below:
-
 function longestConsec(strarr, k) {
     var longest = "";
     for(var i=0;k>0 && i<=strarr.length-k;i++){
